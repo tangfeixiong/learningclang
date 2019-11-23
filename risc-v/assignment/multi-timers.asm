@@ -21,27 +21,30 @@
 .equ REG_TIMECMP, 0xFFFF0020            # timecmp register
 
 .kdata
-kstack:    .space 4000                     # Holding key sequence
+kstack:         .space 4000             # User stack
 
 .section .data
-.align 2
+.align 4
 str:
-        .asciz "Timer "                 # "Timer x: MM:SS\n"
-colon:  .byte 0x3A                      # ascii ':'
-line_feed: .byte 0x0A                   # ascii '\n'
-quit_char: .byte 0x71                   # ascii 'q'
-at_char: .byte 0x40                     # ascii '@'
+                .asciz "Timer "         # "Timer x: MM:SS\n"
+colon:          .byte 0x3A              # ascii ':'
+line_feed:      .byte 0x0A              # ascii '\n'
+quit_char:      .byte 0x71              # ascii 'q'
+at_char:        .byte 0x40              # ascii '@'
 timers_count:
-        .word 0x000006                  # Amount of timers
+                .word 0x000006          # Amount of timers
 timers_remaining_seconds:
-        .word 0, 0, 0, 0, 0, 0          # Hold remaining seconds for all 6 timers
-row:    .4byte 0
-col:    .4byte 0
-buf:    .space 4000                     # Hold key sequence
+                .word 0, 0, 0, 0, 0, 0  # Array of 6 remaining seconds
+row:            .4byte 0
+col:            .4byte 0
+buf:            .space 4000             # Hold key sequence
 
 .section .text
 .global main
 main:
+        addi    sp, sp, -4
+        sw      ra, 0(sp)
+        
         ; csrrw   s0, 0x140, s0           # kernal stack
         ; la      s0, kstack                 
         ; addi    s0, s0, -128
@@ -73,13 +76,13 @@ main:
 
 # read from RTC time
         li      a0, REG_TIME
-        lw      a1, 0(a0)
+        ld      a1, 0(a0)
 
 # write to utimecmp
         li      a0, REG_TIMECMP
         li      t0, 1000                # 1000 milliseconds
         add     a1, a1, t0
-        sw      a1, 0(a0)
+        sd      a1, 0(a0)
 
 loop:
         lw      t0, REG_KBD_CTRL        # Disable kbd
@@ -97,15 +100,19 @@ loop:
         ori     t1, t0, KDB_CTRL_IEBM
         sw      t1, REG_KBD_CTRL
         
-        j loop
+        j       loop
 done:
-        jr ra, 0
+        lw      ra, 0(sp)
+        addi    sp, sp, 4
+        jr      ra
 
 
-# Wait for key to invoke timer or quit
-# To invoke timer, the key sequence must be "123@5\n"
-# Or "q\n" to shutdown program
-# Otherwise raise exception
+# Interrupts handler
+# Wait for key to modify timer or quit
+# To modify timer, the key sequence must like "123@5\n"
+# Or "q" to quit handler
+# Time interrupt invoked in every one second
+# Otherwise exception is raised
 handler:
         csrrc   t0, CSR_UCAUSE, zero
         bgez    t0, fail                # interrupt causes are less than zero
@@ -306,48 +313,49 @@ done:
 # timer number is registered into t6, and ascii is registed into t1
 # timers left seconds are registed into s4(addr) and a0(value)
 display_init_content:     
-        addi sp, sp, -128               # Enlarge stack to push register
-        sw s0, 72(sp)
-        lw s0, sp     
-        sw a7, 0(s0)
-        sw a6, 4(s0)
-        sw a5, 8(s0)
-        sw s11, 32(s0)
-        sw s10, 36(s0)
-        sw t0, 80(s0)
-        sw t6, 104(s0)
+        addi    sp, sp, -128            # Enlarge stack to push register
+        sw      s0, 76(sp)
+        lw      s0, sp     
+        sw      a7, 0(s0)
+        sw      a6, 4(s0)
+        sw      a5, 8(s0)
+        sw      s11, 32(s0)
+        sw      s10, 36(s0)
+        sw      t0, 80(s0)
+        sw      t5, 100(s0)
+        sw      t6, 104(s0)
 
-        la t0, row
-        lw a7, 0(t0)
-        la t0, col
-        lw a6, 0(t0)
+        la      t0, row
+        lw      a7, 0(t0)
+        la      t0, col
+        lw      a6, 0(t0)
           
-        li s11, timers_count            
-        la s10, timers_remaining_seconds              
+        li      s11, timers_count            
+        la      s10, timers_remaining_seconds              
 
-        li t6, 0                        # Timer index [0, ..., 5]
-        la t5, str                      # Leading message addr
-1:      beq t6, s11, 2f                 # Loop timers index
-        jal ra, move_cursor             # move cursor to left upper
-        lw a5, a6
-        lw a6, a7
-        la a7, t5                       # Leading message addr
-        jal ra, put_string
-        addi a7, t6, 0x30               # Encode timer number with ascii
-        jal ra, put_char
-        li a7, colon
-        jal ra, put_char
-        li a7, 0x20                     # To show sperate space
-        jal ra, put_char
-        lw  a7, 0(s10)                  # seconds left of current timer
-        jal ra, display_time
-        li a7, line_feed
-        jal ra, put_char
-        addi t6, t6, 1                  # Process next timer
-        addi s10, s10, 4
-        addi a7, a6, 0                  
-        addi a6, a5, 0                      
-		j 1b
+        li      t6, 0                   # Timer index [0, ..., 5]
+        la      t5, str                 # Leading message addr
+1:      beq     t6, s11, 2f             # Loop timers index
+        jal     ra, move_cursor         # move cursor to left upper
+        lw      a5, a6
+        lw      a6, a7
+        la      a7, t5                  # Leading message addr
+        jal     ra, put_string
+        addi    a7, t6, 0x30            # Encode timer number with ascii
+        jal     ra, put_char
+        li      a7, colon
+        jal     ra, put_char
+        li      a7, 0x20                # To show sperate space
+        jal     ra, put_char
+        lw      a7, 0(s10)              # remaining seconds of current timer
+        jal     ra, display_time
+        li      a7, line_feed
+        jal     ra, put_char
+        addi    t6, t6, 1               # Process next timer
+        addi    s10, s10, 4
+        addi    a7, a6, 0                  
+        addi    a6, a5, 0                      
+		j       1b
 2:                                      # Done loop
         la t0, row
         sw a6, 0(t0)
@@ -359,8 +367,10 @@ display_init_content:
         lw s11, 32(s0)
         lw s10, 46(s0)
         lw t0, 80(s0)
+        lw t5, 100(s0)
         lw t6, 104(s0)
-        addi s0, s0, 128                # Free memory in stack
+        lw s0, 76(sp)
+        addi sp, sp, 128                # Free memory in stack
         ret
         
 
