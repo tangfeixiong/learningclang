@@ -18,87 +18,91 @@ autoconf
 ```
 vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/lang-learn/linux/kubernetes-pause$ autoconf -v
 autoconf: running /usr/bin/autom4te -v --language=autoconf --output=configure configure.ac
+autom4te: formatting traces for `/tmp/am4t1rTfji/dependencies': include, m4_include
+autom4te: up_to_date (autom4te.cache/traces.0): up to date
 autom4te: the trace request object is:
 autom4te: $VAR1 = bless( [
-autom4te:                  '2',
-autom4te:                  0,
+autom4te:                  '0',
+autom4te:                  1,
 autom4te:                  [
 autom4te:                    '/usr/share/autoconf'
 autom4te:                  ],
 autom4te:                  [
 autom4te:                    '/usr/share/autoconf/autoconf/autoconf.m4f',
-autom4te:                    'aclocal.m4',
 autom4te:                    'configure.ac'
 autom4te:                  ],
 autom4te:                  {
-autom4te:                    'AM_MAINTAINER_MODE' => 1,
-autom4te:                    'AM_NLS' => 1,
-autom4te:                    'AC_CANONICAL_BUILD' => 1,
-autom4te:                    'AC_FC_PP_SRCEXT' => 1,
-autom4te:                    'AC_FC_SRCEXT' => 1,
-autom4te:                    'AM_PROG_MOC' => 1,
-autom4te:                    'LT_INIT' => 1,
-autom4te:                    'AC_INIT' => 1,
-autom4te:                    'AM_MAKEFILE_INCLUDE' => 1,
-autom4te:                    'AM_PROG_F77_C_O' => 1,
-autom4te:                    'AM_PROG_CC_C_O' => 1,
-autom4te:                    'include' => 1,
-autom4te:                    'AC_CANONICAL_HOST' => 1,
-autom4te:                    '_AM_MAKEFILE_INCLUDE' => 1,
-autom4te:                    'm4_pattern_allow' => 1,
-autom4te:                    '_AM_SUBST_NOTMAKE' => 1,
-autom4te:                    'AC_PROG_LIBTOOL' => 1,
-autom4te:                    'AC_DEFINE_TRACE_LITERAL' => 1,
-autom4te:                    'AM_PROG_CXX_C_O' => 1,
-autom4te:                    'm4_include' => 1,
-autom4te:                    'AC_CONFIG_FILES' => 1,
-autom4te:                    '_AM_COND_ELSE' => 1,
-autom4te:                    'AC_CONFIG_LIBOBJ_DIR' => 1,
-autom4te:                    'AM_CONDITIONAL' => 1,
-autom4te:                    'AM_POT_TOOLS' => 1,
 autom4te:                    'm4_pattern_forbid' => 1,
-autom4te:                    'm4_sinclude' => 1,
-autom4te:                    'AM_PROG_LIBTOOL' => 1,
-autom4te:                    'AC_SUBST_TRACE' => 1,
-autom4te:                    'AM_AUTOMAKE_VERSION' => 1,
-autom4te:                    'AC_FC_PP_DEFINE' => 1,
-autom4te:                    'AC_CANONICAL_SYSTEM' => 1,
-autom4te:                    'AC_CONFIG_HEADERS' => 1,
-autom4te:                    'AC_CONFIG_LINKS' => 1,
-autom4te:                    'LT_CONFIG_LTDL_DIR' => 1,
-autom4te:                    'AM_GNU_GETTEXT_INTL_SUBDIR' => 1,
-autom4te:                    'AM_ENABLE_MULTILIB' => 1,
-autom4te:                    '_m4_warn' => 1,
-autom4te:                    'AC_CONFIG_SUBDIRS' => 1,
-autom4te:                    'AC_CANONICAL_TARGET' => 1,
-autom4te:                    'AC_SUBST' => 1,
-autom4te:                    'AC_CONFIG_AUX_DIR' => 1,
-autom4te:                    'AM_PATH_GUILE' => 1,
 autom4te:                    'AM_SILENT_RULES' => 1,
+autom4te:                    'AM_PROG_F77_C_O' => 1,
 autom4te:                    'AM_PROG_AR' => 1,
-autom4te:                    'AC_REQUIRE_AUX_FILE' => 1,
+autom4te:                    'AM_PROG_CC_C_O' => 1,
+autom4te:                    '_AM_MAKEFILE_INCLUDE' => 1,
+autom4te:                    'm4_include' => 1,
+autom4te:                    'AC_CONFIG_HEADERS' => 1,
 autom4te:                    '_LT_AC_TAGCONFIG' => 1,
-autom4te:                    'AH_OUTPUT' => 1,
-autom4te:                    'AM_GNU_GETTEXT' => 1,
-autom4te:                    '_AM_COND_ENDIF' => 1,
-autom4te:                    'LT_SUPPORTED_TAG' => 1,
 autom4te:                    'AM_PROG_FC_C_O' => 1,
-autom4te:                    'AM_INIT_AUTOMAKE' => 1,
+autom4te:                    'AM_AUTOMAKE_VERSION' => 1,
+autom4te:                    'm4_sinclude' => 1,
+autom4te:                    'AC_SUBST_TRACE' => 1,
+autom4te:                    'AC_CONFIG_LIBOBJ_DIR' => 1,
+autom4te:                    'AC_DEFINE_TRACE_LITERAL' => 1,
+autom4te:                    'include' => 1,
+autom4te:                    'AM_MAINTAINER_MODE' => 1,
+autom4te:                    'AM_POT_TOOLS' => 1,
+autom4te:                    'AC_CONFIG_SUBDIRS' => 1,
+autom4te:                    'AM_GNU_GETTEXT' => 1,
 autom4te:                    '_AM_COND_IF' => 1,
-autom4te:                    'AM_XGETTEXT_OPTION' => 1,
+autom4te:                    'AM_PATH_GUILE' => 1,
+autom4te:                    'AC_CHECK_HEADERS' => 1,
+autom4te:                    'AC_CONFIG_FILES' => 1,
+autom4te:                    'AC_CONFIG_AUX_DIR' => 1,
 autom4te:                    'sinclude' => 1,
+autom4te:                    'LT_SUPPORTED_TAG' => 1,
+autom4te:                    'AM_MAKEFILE_INCLUDE' => 1,
+autom4te:                    'AC_PREREQ' => 1,
+autom4te:                    'AM_PROG_MOC' => 1,
+autom4te:                    'AC_CANONICAL_SYSTEM' => 1,
+autom4te:                    '_AM_COND_ELSE' => 1,
+autom4te:                    'AC_SUBST' => 1,
+autom4te:                    'LT_INIT' => 1,
+autom4te:                    'AH_OUTPUT' => 1,
+autom4te:                    'AM_ENABLE_MULTILIB' => 1,
+autom4te:                    'AM_INIT_AUTOMAKE' => 1,
+autom4te:                    'AM_CONDITIONAL' => 1,
+autom4te:                    'AC_CANONICAL_HOST' => 1,
+autom4te:                    'AC_CHECK_FUNCS' => 1,
+autom4te:                    'm4_pattern_allow' => 1,
+autom4te:                    'AC_PROG_CC' => 1,
+autom4te:                    'AC_PROG_LIBTOOL' => 1,
+autom4te:                    'AC_CANONICAL_TARGET' => 1,
+autom4te:                    'AC_LIBSOURCE' => 1,
+autom4te:                    'AC_FC_PP_DEFINE' => 1,
+autom4te:                    'LT_CONFIG_LTDL_DIR' => 1,
+autom4te:                    '_AM_SUBST_NOTMAKE' => 1,
+autom4te:                    'AC_FC_SRCEXT' => 1,
+autom4te:                    'AC_INIT' => 1,
+autom4te:                    'AM_XGETTEXT_OPTION' => 1,
+autom4te:                    'AM_GNU_GETTEXT_INTL_SUBDIR' => 1,
+autom4te:                    'AC_REQUIRE_AUX_FILE' => 1,
+autom4te:                    '_AM_COND_ENDIF' => 1,
+autom4te:                    'AM_PROG_LIBTOOL' => 1,
+autom4te:                    'AC_CANONICAL_BUILD' => 1,
+autom4te:                    'AC_CONFIG_LINKS' => 1,
+autom4te:                    'AM_NLS' => 1,
 autom4te:                    'AC_FC_FREEFORM' => 1,
-autom4te:                    'AC_LIBSOURCE' => 1
+autom4te:                    'AM_PROG_CXX_C_O' => 1,
+autom4te:                    '_m4_warn' => 1,
+autom4te:                    'AC_FC_PP_SRCEXT' => 1
 autom4te:                  }
 autom4te:                ], 'Autom4te::Request' );
-autom4te: running: /usr/bin/m4 --nesting-limit=1024 --gnu --include=/usr/share/autoconf --debug=aflq --fatal-warning --debugfile=autom4te.cache/traces.2t --trace=AC_CANONICAL_BUILD --trace=AC_CANONICAL_HOST --trace=AC_CANONICAL_SYSTEM --trace=AC_CANONICAL_TARGET --trace=AC_CONFIG_AUX_DIR --trace=AC_CONFIG_FILES --trace=AC_CONFIG_HEADERS --trace=AC_CONFIG_LIBOBJ_DIR --trace=AC_CONFIG_LINKS --trace=AC_CONFIG_SUBDIRS --trace=AC_DEFINE_TRACE_LITERAL --trace=AC_FC_FREEFORM --trace=AC_FC_PP_DEFINE --trace=AC_FC_PP_SRCEXT --trace=AC_FC_SRCEXT --trace=AC_INIT --trace=AC_LIBSOURCE --trace=AC_PROG_LIBTOOL --trace=AC_REQUIRE_AUX_FILE --trace=AC_SUBST --trace=AC_SUBST_TRACE --trace=AH_OUTPUT --trace=AM_AUTOMAKE_VERSION --trace=AM_CONDITIONAL --trace=AM_ENABLE_MULTILIB --trace=AM_GNU_GETTEXT --trace=AM_GNU_GETTEXT_INTL_SUBDIR --trace=AM_INIT_AUTOMAKE --trace=AM_MAINTAINER_MODE --trace=AM_MAKEFILE_INCLUDE --trace=AM_NLS --trace=AM_PATH_GUILE --trace=AM_POT_TOOLS --trace=AM_PROG_AR --trace=AM_PROG_CC_C_O --trace=AM_PROG_CXX_C_O --trace=AM_PROG_F77_C_O --trace=AM_PROG_FC_C_O --trace=AM_PROG_LIBTOOL --trace=AM_PROG_MOC --trace=AM_SILENT_RULES --trace=AM_XGETTEXT_OPTION --trace=LT_CONFIG_LTDL_DIR --trace=LT_INIT --trace=LT_SUPPORTED_TAG --trace=_AM_COND_ELSE --trace=_AM_COND_ENDIF --trace=_AM_COND_IF --trace=_AM_MAKEFILE_INCLUDE --trace=_AM_SUBST_NOTMAKE --trace=_LT_AC_TAGCONFIG --trace=_m4_warn --trace=include --trace=m4_include --trace=m4_pattern_allow --trace=m4_pattern_forbid --trace=m4_sinclude --trace=sinclude --reload-state=/usr/share/autoconf/autoconf/autoconf.m4f --undefine=__m4_version__ aclocal.m4 configure.ac > autom4te.cache/output.2t
-autom4te: formatting traces for `/tmp/am4tqzfuEf/warnings': _m4_warn
-autom4te: reading /tmp/am4tqzfuEf/warnings
+autom4te: formatting traces for `/tmp/am4t1rTfji/warnings': _m4_warn
+autom4te: reading /tmp/am4t1rTfji/warnings
 autom4te: creating configure
-autom4te: formatting traces for `/tmp/am4tqzfuEf/patterns': m4_pattern_allow, m4_pattern_forbid
+autom4te: formatting traces for `/tmp/am4t1rTfji/patterns': m4_pattern_allow, m4_pattern_forbid
 autom4te: forbidden tokens: ^_?A[CHUM]_|_AC_|^LIBOBJS$|^_?m4_|^dnl$|^_?AS_
 autom4te: forbidden token : ^LIBOBJS$ => do not use LIBOBJS directly, use AC_LIBOBJ (see section `AC_LIBOBJ vs LIBOBJS'
-autom4te: allowed   tokens: ^AS_FLAGS$|^SHELL$|^PATH_SEPARATOR$|^PACKAGE_NAME$|^PACKAGE_TARNAME$|^PACKAGE_VERSION$|^PACKAGE_STRING$|^PACKAGE_BUGREPORT$|^PACKAGE_URL$|^exec_prefix$|^prefix$|^program_transform_name$|^bindir$|^sbindir$|^libexecdir$|^datarootdir$|^datadir$|^sysconfdir$|^sharedstatedir$|^localstatedir$|^runstatedir$|^includedir$|^oldincludedir$|^docdir$|^infodir$|^htmldir$|^dvidir$|^pdfdir$|^psdir$|^libdir$|^localedir$|^mandir$|^PACKAGE_NAME$|^PACKAGE_TARNAME$|^PACKAGE_VERSION$|^PACKAGE_STRING$|^PACKAGE_BUGREPORT$|^PACKAGE_URL$|^DEFS$|^ECHO_C$|^ECHO_N$|^ECHO_T$|^LIBS$|^build_alias$|^host_alias$|^target_alias$|^AM_[A-Z]+FLAGS$|^INSTALL_PROGRAM$|^INSTALL_SCRIPT$|^INSTALL_DATA$|^am__isrc$|^CYGPATH_W$|^PACKAGE$|^VERSION$|^PACKAGE$|^VERSION$|^ACLOCAL$|^AUTOCONF$|^AUTOMAKE$|^AUTOHEADER$|^MAKEINFO$|^install_sh$|^STRIP$|^INSTALL_STRIP_PROGRAM$|^MKDIR_P$|^mkdir_p$|^AWK$|^SET_MAKE$|^am__leading_dot$|^AMTAR$|^am__tar$|^am__untar$|^AM_V$|^AM_DEFAULT_V$|^AM_DEFAULT_VERBOSITY$|^AM_BACKSLASH$|^CC$|^CFLAGS$|^LDFLAGS$|^LIBS$|^CPPFLAGS$|^CC$|^CC$|^CC$|^CC$|^ac_ct_CC$|^EXEEXT$|^OBJEXT$|^DEPDIR$|^am__include$|^am__quote$|^AMDEP_TRUE$|^AMDEP_FALSE$|^AMDEPBACKSLASH$|^am__nodep$|^CCDEPMODE$|^am__fastdepCC_TRUE$|^am__fastdepCC_FALSE$|^CPP$|^CPPFLAGS$|^CPP$|^GREP$|^EGREP$|^STDC_HEADERS$|^HAVE_STRCASECMP$|^LIBOBJS$|^LTLIBOBJS$|^am__EXEEXT_TRUE$|^am__EXEEXT_FALSE$
+autom4te: allowed   tokens: ^AS_FLAGS$|^SHELL$|^PATH_SEPARATOR$|^PACKAGE_NAME$|^PACKAGE_TARNAME$|^PACKAGE_VERSION$|^PACKAGE_STRING$|^PACKAGE_BUGREPORT$|^PACKAGE_URL$|^exec_prefix$|^prefix$|^program_transform_name$|^bindir$|^sbindir$|^libexecdir$|^datarootdir$|^datadir$|^sysconfdir$|^sharedstatedir$|^localstatedir$|^runstatedir$|^includedir$|^oldincludedir$|^docdir$|^infodir$|^htmldir$|^dvidir$|^pdfdir$|^psdir$|^libdir$|^localedir$|^mandir$|^PACKAGE_NAME$|^PACKAGE_TARNAME$|^PACKAGE_VERSION$|^PACKAGE_STRING$|^PACKAGE_BUGREPORT$|^PACKAGE_URL$|^DEFS$|^ECHO_C$|^ECHO_N$|^ECHO_T$|^LIBS$|^build_alias$|^host_alias$|^target_alias$|^CC$|^CFLAGS$|^LDFLAGS$|^LIBS$|^CPPFLAGS$|^CC$|^CC$|^CC$|^CC$|^ac_ct_CC$|^EXEEXT$|^OBJEXT$|^CPP$|^CPPFLAGS$|^CPP$|^GREP$|^EGREP$|^STDC_HEADERS$|^HAVE_STRCASECMP$|^LIBOBJS$|^LTLIBOBJS$
 ```
 
 config.h.in
@@ -223,6 +227,40 @@ autom4te: formatting traces for `-': AC_CONFIG_HEADERS, AC_DEFINE_TRACE_LITERAL,
 autoheader: 'config.h.in' is created
 ```
 
+config.h
+```
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/lang-learn/linux/kubernetes-pause$ ./configure 
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for strcasecmp... yes
+configure: creating ./config.status
+config.status: creating config.h
+```
+
+aclocal
 ```
 vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/lang-learn/linux/kubernetes-pause$ aclocal --verbose
 aclocal: found macro AM_PROG_VALAC in /usr/share/aclocal-1.15/vala.m4: 21
@@ -615,38 +653,90 @@ aclocal: aclocal.m4 unchanged
 ```
 
 autoconf
-
-configure
 ```
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/lang-learn/linux/kubernetes-pause$ ./configure 
-checking for gcc... gcc
-checking whether the C compiler works... yes
-checking for C compiler default output file name... a.out
-checking for suffix of executables... 
-checking whether we are cross compiling... no
-checking for suffix of object files... o
-checking whether we are using the GNU C compiler... yes
-checking whether gcc accepts -g... yes
-checking for gcc option to accept ISO C89... none needed
-checking how to run the C preprocessor... gcc -E
-checking for grep that handles long lines and -e... /bin/grep
-checking for egrep... /bin/grep -E
-checking for ANSI C header files... yes
-checking for sys/types.h... yes
-checking for sys/stat.h... yes
-checking for stdlib.h... yes
-checking for string.h... yes
-checking for memory.h... yes
-checking for strings.h... yes
-checking for inttypes.h... yes
-checking for stdint.h... yes
-checking for unistd.h... yes
-checking for stdlib.h... (cached) yes
-checking for string.h... (cached) yes
-checking for unistd.h... (cached) yes
-checking for strcasecmp... yes
-configure: creating ./config.status
-config.status: creating config.h
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/lang-learn/linux/kubernetes-pause$ autoconf -v
+autoconf: running /usr/bin/autom4te -v --language=autoconf --output=configure configure.ac
+autom4te: the trace request object is:
+autom4te: $VAR1 = bless( [
+autom4te:                  '2',
+autom4te:                  0,
+autom4te:                  [
+autom4te:                    '/usr/share/autoconf'
+autom4te:                  ],
+autom4te:                  [
+autom4te:                    '/usr/share/autoconf/autoconf/autoconf.m4f',
+autom4te:                    'aclocal.m4',
+autom4te:                    'configure.ac'
+autom4te:                  ],
+autom4te:                  {
+autom4te:                    'AM_MAINTAINER_MODE' => 1,
+autom4te:                    'AM_NLS' => 1,
+autom4te:                    'AC_CANONICAL_BUILD' => 1,
+autom4te:                    'AC_FC_PP_SRCEXT' => 1,
+autom4te:                    'AC_FC_SRCEXT' => 1,
+autom4te:                    'AM_PROG_MOC' => 1,
+autom4te:                    'LT_INIT' => 1,
+autom4te:                    'AC_INIT' => 1,
+autom4te:                    'AM_MAKEFILE_INCLUDE' => 1,
+autom4te:                    'AM_PROG_F77_C_O' => 1,
+autom4te:                    'AM_PROG_CC_C_O' => 1,
+autom4te:                    'include' => 1,
+autom4te:                    'AC_CANONICAL_HOST' => 1,
+autom4te:                    '_AM_MAKEFILE_INCLUDE' => 1,
+autom4te:                    'm4_pattern_allow' => 1,
+autom4te:                    '_AM_SUBST_NOTMAKE' => 1,
+autom4te:                    'AC_PROG_LIBTOOL' => 1,
+autom4te:                    'AC_DEFINE_TRACE_LITERAL' => 1,
+autom4te:                    'AM_PROG_CXX_C_O' => 1,
+autom4te:                    'm4_include' => 1,
+autom4te:                    'AC_CONFIG_FILES' => 1,
+autom4te:                    '_AM_COND_ELSE' => 1,
+autom4te:                    'AC_CONFIG_LIBOBJ_DIR' => 1,
+autom4te:                    'AM_CONDITIONAL' => 1,
+autom4te:                    'AM_POT_TOOLS' => 1,
+autom4te:                    'm4_pattern_forbid' => 1,
+autom4te:                    'm4_sinclude' => 1,
+autom4te:                    'AM_PROG_LIBTOOL' => 1,
+autom4te:                    'AC_SUBST_TRACE' => 1,
+autom4te:                    'AM_AUTOMAKE_VERSION' => 1,
+autom4te:                    'AC_FC_PP_DEFINE' => 1,
+autom4te:                    'AC_CANONICAL_SYSTEM' => 1,
+autom4te:                    'AC_CONFIG_HEADERS' => 1,
+autom4te:                    'AC_CONFIG_LINKS' => 1,
+autom4te:                    'LT_CONFIG_LTDL_DIR' => 1,
+autom4te:                    'AM_GNU_GETTEXT_INTL_SUBDIR' => 1,
+autom4te:                    'AM_ENABLE_MULTILIB' => 1,
+autom4te:                    '_m4_warn' => 1,
+autom4te:                    'AC_CONFIG_SUBDIRS' => 1,
+autom4te:                    'AC_CANONICAL_TARGET' => 1,
+autom4te:                    'AC_SUBST' => 1,
+autom4te:                    'AC_CONFIG_AUX_DIR' => 1,
+autom4te:                    'AM_PATH_GUILE' => 1,
+autom4te:                    'AM_SILENT_RULES' => 1,
+autom4te:                    'AM_PROG_AR' => 1,
+autom4te:                    'AC_REQUIRE_AUX_FILE' => 1,
+autom4te:                    '_LT_AC_TAGCONFIG' => 1,
+autom4te:                    'AH_OUTPUT' => 1,
+autom4te:                    'AM_GNU_GETTEXT' => 1,
+autom4te:                    '_AM_COND_ENDIF' => 1,
+autom4te:                    'LT_SUPPORTED_TAG' => 1,
+autom4te:                    'AM_PROG_FC_C_O' => 1,
+autom4te:                    'AM_INIT_AUTOMAKE' => 1,
+autom4te:                    '_AM_COND_IF' => 1,
+autom4te:                    'AM_XGETTEXT_OPTION' => 1,
+autom4te:                    'sinclude' => 1,
+autom4te:                    'AC_FC_FREEFORM' => 1,
+autom4te:                    'AC_LIBSOURCE' => 1
+autom4te:                  }
+autom4te:                ], 'Autom4te::Request' );
+autom4te: running: /usr/bin/m4 --nesting-limit=1024 --gnu --include=/usr/share/autoconf --debug=aflq --fatal-warning --debugfile=autom4te.cache/traces.2t --trace=AC_CANONICAL_BUILD --trace=AC_CANONICAL_HOST --trace=AC_CANONICAL_SYSTEM --trace=AC_CANONICAL_TARGET --trace=AC_CONFIG_AUX_DIR --trace=AC_CONFIG_FILES --trace=AC_CONFIG_HEADERS --trace=AC_CONFIG_LIBOBJ_DIR --trace=AC_CONFIG_LINKS --trace=AC_CONFIG_SUBDIRS --trace=AC_DEFINE_TRACE_LITERAL --trace=AC_FC_FREEFORM --trace=AC_FC_PP_DEFINE --trace=AC_FC_PP_SRCEXT --trace=AC_FC_SRCEXT --trace=AC_INIT --trace=AC_LIBSOURCE --trace=AC_PROG_LIBTOOL --trace=AC_REQUIRE_AUX_FILE --trace=AC_SUBST --trace=AC_SUBST_TRACE --trace=AH_OUTPUT --trace=AM_AUTOMAKE_VERSION --trace=AM_CONDITIONAL --trace=AM_ENABLE_MULTILIB --trace=AM_GNU_GETTEXT --trace=AM_GNU_GETTEXT_INTL_SUBDIR --trace=AM_INIT_AUTOMAKE --trace=AM_MAINTAINER_MODE --trace=AM_MAKEFILE_INCLUDE --trace=AM_NLS --trace=AM_PATH_GUILE --trace=AM_POT_TOOLS --trace=AM_PROG_AR --trace=AM_PROG_CC_C_O --trace=AM_PROG_CXX_C_O --trace=AM_PROG_F77_C_O --trace=AM_PROG_FC_C_O --trace=AM_PROG_LIBTOOL --trace=AM_PROG_MOC --trace=AM_SILENT_RULES --trace=AM_XGETTEXT_OPTION --trace=LT_CONFIG_LTDL_DIR --trace=LT_INIT --trace=LT_SUPPORTED_TAG --trace=_AM_COND_ELSE --trace=_AM_COND_ENDIF --trace=_AM_COND_IF --trace=_AM_MAKEFILE_INCLUDE --trace=_AM_SUBST_NOTMAKE --trace=_LT_AC_TAGCONFIG --trace=_m4_warn --trace=include --trace=m4_include --trace=m4_pattern_allow --trace=m4_pattern_forbid --trace=m4_sinclude --trace=sinclude --reload-state=/usr/share/autoconf/autoconf/autoconf.m4f --undefine=__m4_version__ aclocal.m4 configure.ac > autom4te.cache/output.2t
+autom4te: formatting traces for `/tmp/am4tqzfuEf/warnings': _m4_warn
+autom4te: reading /tmp/am4tqzfuEf/warnings
+autom4te: creating configure
+autom4te: formatting traces for `/tmp/am4tqzfuEf/patterns': m4_pattern_allow, m4_pattern_forbid
+autom4te: forbidden tokens: ^_?A[CHUM]_|_AC_|^LIBOBJS$|^_?m4_|^dnl$|^_?AS_
+autom4te: forbidden token : ^LIBOBJS$ => do not use LIBOBJS directly, use AC_LIBOBJ (see section `AC_LIBOBJ vs LIBOBJS'
+autom4te: allowed   tokens: ^AS_FLAGS$|^SHELL$|^PATH_SEPARATOR$|^PACKAGE_NAME$|^PACKAGE_TARNAME$|^PACKAGE_VERSION$|^PACKAGE_STRING$|^PACKAGE_BUGREPORT$|^PACKAGE_URL$|^exec_prefix$|^prefix$|^program_transform_name$|^bindir$|^sbindir$|^libexecdir$|^datarootdir$|^datadir$|^sysconfdir$|^sharedstatedir$|^localstatedir$|^runstatedir$|^includedir$|^oldincludedir$|^docdir$|^infodir$|^htmldir$|^dvidir$|^pdfdir$|^psdir$|^libdir$|^localedir$|^mandir$|^PACKAGE_NAME$|^PACKAGE_TARNAME$|^PACKAGE_VERSION$|^PACKAGE_STRING$|^PACKAGE_BUGREPORT$|^PACKAGE_URL$|^DEFS$|^ECHO_C$|^ECHO_N$|^ECHO_T$|^LIBS$|^build_alias$|^host_alias$|^target_alias$|^AM_[A-Z]+FLAGS$|^INSTALL_PROGRAM$|^INSTALL_SCRIPT$|^INSTALL_DATA$|^am__isrc$|^CYGPATH_W$|^PACKAGE$|^VERSION$|^PACKAGE$|^VERSION$|^ACLOCAL$|^AUTOCONF$|^AUTOMAKE$|^AUTOHEADER$|^MAKEINFO$|^install_sh$|^STRIP$|^INSTALL_STRIP_PROGRAM$|^MKDIR_P$|^mkdir_p$|^AWK$|^SET_MAKE$|^am__leading_dot$|^AMTAR$|^am__tar$|^am__untar$|^AM_V$|^AM_DEFAULT_V$|^AM_DEFAULT_VERBOSITY$|^AM_BACKSLASH$|^CC$|^CFLAGS$|^LDFLAGS$|^LIBS$|^CPPFLAGS$|^CC$|^CC$|^CC$|^CC$|^ac_ct_CC$|^EXEEXT$|^OBJEXT$|^DEPDIR$|^am__include$|^am__quote$|^AMDEP_TRUE$|^AMDEP_FALSE$|^AMDEPBACKSLASH$|^am__nodep$|^CCDEPMODE$|^am__fastdepCC_TRUE$|^am__fastdepCC_FALSE$|^CPP$|^CPPFLAGS$|^CPP$|^GREP$|^EGREP$|^STDC_HEADERS$|^HAVE_STRCASECMP$|^LIBOBJS$|^LTLIBOBJS$|^am__EXEEXT_TRUE$|^am__EXEEXT_FALSE$
 ```
 
 ## automake
