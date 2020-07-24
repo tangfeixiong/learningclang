@@ -14,7 +14,7 @@ configure.ac
 vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/lang-learn/linux/kubernetes-pause$ mv configure.scan configure.ac
 ```
 
-configure
+autoconf
 ```
 vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/lang-learn/linux/kubernetes-pause$ autoconf -v
 autoconf: running /usr/bin/autom4te -v --language=autoconf --output=configure configure.ac
@@ -614,6 +614,8 @@ aclocal: reading aclocal.m4
 aclocal: aclocal.m4 unchanged
 ```
 
+autoconf
+
 configure
 ```
 vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/lang-learn/linux/kubernetes-pause$ ./configure 
@@ -647,6 +649,65 @@ configure: creating ./config.status
 config.status: creating config.h
 ```
 
+## automake
+
+[configure.ac](https://www.gnu.org/savannah-checkouts/gnu/automake/manual/automake.html#Complete) 
+```
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/lang-learn/linux/kubernetes-pause$ head configure.ac 
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ([2.69])
+AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
+AM_INIT_AUTOMAKE
+AC_CONFIG_SRCDIR([pause.c])
+AC_CONFIG_HEADERS([config.h])
+
+# Checks for programs.
+```
+
+[Makefile.am](https://www.gnu.org/savannah-checkouts/gnu/automake/manual/automake.html#Examples)
+```
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/lang-learn/linux/kubernetes-pause$ cat Makefile.am
+bin_PROGRAMS = pause
+pause_SOURCES = pause.c
+pause_LDADD = $(LIBOBJS)
+```
+
+required files
+```
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/lang-learn/linux/kubernetes-pause$ automake --add-missing -v
+automake: thread 0: reading autoconf --trace=AM_EXTRA_RECURSIVE_TARGETS:\$f:\$l::\$d::\$n::\${::}% --trace=AC_REQUIRE_AUX_FILE:\$f:\$l::\$d::\$n::\${::}% --trace=AC_CANONICAL_BUILD:\$f:\$l::\$d::\$n::\${::}% --trace=_AM_SUBST_NOTMAKE:\$f:\$l::\$d::\$n::\${::}% --trace=AC_CANONICAL_HOST:\$f:\$l::\$d::\$n::\${::}% --trace=AC_SUBST_TRACE:\$f:\$l::\$d::\$n::\${::}% --trace=AC_FC_SRCEXT:\$f:\$l::\$d::\$n::\${::}% --trace=_AM_COND_IF:\$f:\$l::\$d::\$n::\${::}% --trace=AM_GNU_GETTEXT:\$f:\$l::\$d::\$n::\${::}% --trace=AC_INIT:\$f:\$l::\$d::\$n::\${::}% --trace=AM_PROG_MKDIR_P:\$f:\$l::\$d::\$n::\${::}% --trace=AM_INIT_AUTOMAKE:\$f:\$l::\$d::\$n::\${::}% --trace=AM_CONDITIONAL:\$f:\$l::\$d::\$n::\${::}% --trace=AC_CONFIG_FILES:\$f:\$l::\$d::\$n::\${::}% --trace=_LT_AC_TAGCONFIG:\$f:\$l::\$d::\$n::\${::}% --trace=AC_LIBSOURCE:\$f:\$l::\$d::\$n::\${::}% --trace=LT_SUPPORTED_TAG:\$f:\$l::\$d::\$n::\${::}% --trace=AM_GNU_GETTEXT_INTL_SUBDIR:\$f:\$l::\$d::\$n::\${::}% --trace=AC_CONFIG_LIBOBJ_DIR:\$f:\$l::\$d::\$n::\${::}% --trace=m4_include:\$f:\$l::\$d::\$n::\${::}% --trace=AC_CONFIG_HEADERS:\$f:\$l::\$d::\$n::\${::}% --trace=AC_CONFIG_LINKS:\$f:\$l::\$d::\$n::\${::}% --trace=_AM_COND_ENDIF:\$f:\$l::\$d::\$n::\${::}% --trace=AM_MAINTAINER_MODE:\$f:\$l::\$d::\$n::\${::}% --trace=sinclude:\$f:\$l::\$d::\$n::\${::}% --trace=AM_PROG_AR:\$f:\$l::\$d::\$n::\${::}% --trace=_AM_COND_ELSE:\$f:\$l::\$d::\$n::\${::}% --trace=AM_AUTOMAKE_VERSION:\$f:\$l::\$d::\$n::\${::}% --trace=m4_sinclude:\$f:\$l::\$d::\$n::\${::}% --trace=AC_CANONICAL_TARGET:\$f:\$l::\$d::\$n::\${::}% --trace=AC_CONFIG_AUX_DIR:\$f:\$l::\$d::\$n::\${::}%
+automake: thread 0: reading /usr/share/automake-1.15/am/header-vars.am
+automake: thread 0: reading Makefile.am
+Makefile.am: error: required file './NEWS' not found
+Makefile.am: error: required file './README' not found
+Makefile.am: error: required file './AUTHORS' not found
+Makefile.am: error: required file './ChangeLog' not found
+automake: thread 0: reading /usr/share/automake-1.15/am/configure.am
+automake: thread 0: reading /usr/share/automake-1.15/am/remake-hdr.am
+automake: thread 0: reading /usr/share/automake-1.15/am/clean-hdr.am
+automake: thread 0: reading /usr/share/automake-1.15/am/progs.am
+automake: thread 0: reading /usr/share/automake-1.15/am/program.am
+automake: thread 0: reading /usr/share/automake-1.15/am/compile.am
+automake: thread 0: reading /usr/share/automake-1.15/am/depend.am
+automake: thread 0: reading /usr/share/automake-1.15/am/depend2.am
+automake: thread 0: Sources ending in .c become .o
+automake: thread 0: Sources ending in .c become .obj
+automake: thread 0: reading /usr/share/automake-1.15/am/lang-compile.am
+automake: thread 0: reading /usr/share/automake-1.15/am/texinfos.am
+automake: thread 0: reading /usr/share/automake-1.15/am/tags.am
+automake: thread 0: reading /usr/share/automake-1.15/am/distdir.am
+automake: thread 0: reading /usr/share/automake-1.15/am/footer.am
+automake: thread 0: reading /usr/share/automake-1.15/am/install.am
+automake: thread 0: reading /usr/share/automake-1.15/am/clean.am
+automake: thread 0: not writing Makefile.in because of earlier errors
+```
+
+```
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/lang-learn/linux/kubernetes-pause$ touch NEWS AUTHORS ChangeLog
+```
+
 automake
 ```
 vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/lang-learn/linux/kubernetes-pause$ automake --add-missing -v
@@ -672,6 +733,8 @@ automake: thread 0: reading /usr/share/automake-1.15/am/install.am
 automake: thread 0: reading /usr/share/automake-1.15/am/clean.am
 automake: thread 0: creating Makefile.in
 ```
+
+## Build
 
 configure
 ```
@@ -718,8 +781,6 @@ config.status: creating config.h
 config.status: config.h is unchanged
 config.status: executing depfiles commands
 ```
-
-## Build
 
 make
 ```
